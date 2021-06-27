@@ -8,5 +8,7 @@ ProtectHome=true
 PrivateUsers=true
 PrivateTmp=true
 
+DynamicUser=yes
+
 [Install]
 WantedBy=multi-user.target
