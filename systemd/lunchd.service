@@ -2,12 +2,15 @@
 Description=Lunch as a Service
 
 [Service]
-ExecStart=/usr/local/bin/lunchd
+ExecStart=/usr/local/bin/lunchd -key=${CREDENTIALS_DIRECTORY}/key.pem -certificate=${CREDENTIALS_DIRECTORY}/chain.pem
+
+LoadCredential=key.pem:/etc/letsencrypt/live/lunch.mgdm.net/privkey.pem
+LoadCredential=chain.pem:/etc/letsencrypt/live/lunch.mgdm.net/fullchain.pem
+
 ProtectSystem=strict
 ProtectHome=true
 PrivateUsers=true
 PrivateTmp=true
-
 DynamicUser=yes
 
 [Install]
