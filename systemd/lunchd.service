@@ -3,7 +3,10 @@ Description=Lunch as a Service
 
 [Service]
 ExecStart=/usr/local/bin/lunchd
-User=lunchd
+ProtectSystem=strict
+ProtectHome=true
+PrivateUsers=true
+PrivateTmp=true
 
 [Install]
 WantedBy=multi-user.target
