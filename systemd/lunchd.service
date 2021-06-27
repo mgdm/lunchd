@@ -1,0 +1,9 @@
+[Unit]
+Description=Lunch as a Service
+
+[Service]
+ExecStart=/usr/local/bin/lunchd
+User=lunchd
+
+[Install]
+WantedBy=multi-user.target
